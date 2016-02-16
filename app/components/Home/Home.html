@@ -1,0 +1,178 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div id="trending-header">
+  <div class="row" >
+    <div class="large-12 columns text-center">
+      <h1>TestJoy<small>beta</small></h1>
+      <p>４択テストサービスをMEANスタックで作ってみた</p>
+    </div>
+  </div>
+</div>
+
+<div id="content">
+  <div class="row">
+    <div class="large-12 columns">
+      <!-- <div class="row form-search">
+        <div class="large-12 columns input-box">
+          <div class="row collapse">
+            <div class="small-10 columns">
+              <input type="text" placeholder="テスト名で検索する（未実装）">
+            </div>
+            <div class="small-2 columns">
+              <a href="#" class="button postfix secondary">検索</a>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <div class="examheaders-holder row">
+        <div class="examheader small-12 columns" ng-repeat="exam in exams">
+          <div class="exam-catalog">
+            <div class="left-content">
+              <h3 class="exam-name">
+                {{exam.name}}
+              </h3>
+              <p class="exam-description">
+                {{exam.markdown}}
+              </p>
+            </div>
+            <div class="right-content">
+              <div class="exam-buttons">
+                <a href="/exams/{{ exam.id }}" class="button small">この問題で勉強する</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="examheader small-12 columns">
+          <div class="exam-catalog">
+            <div class="left-content">
+              <h3 class="exam-name">
+                平成26年度 春期 基本情報技術者試験 午前問題
+              </h3>
+              <p class="exam-description">
+                追加作業中です、もうしばらくお待ちください。
+              </p>
+            </div>
+            <div class="right-content">
+              <div class="exam-buttons">
+                <a class="button small disabled">この問題で勉強する</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="examheader small-12 columns">
+          <div class="exam-catalog">
+            <div class="left-content">
+              <h3 class="exam-name">
+                平成25年度 秋期 基本情報技術者試験 午前問題
+              </h3>
+              <p class="exam-description">
+                追加作業中です、もうしばらくお待ちください。
+              </p>
+            </div>
+            <div class="right-content">
+              <div class="exam-buttons">
+                <a class="button small disabled">この問題で勉強する</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="examheader small-12 columns">
+          <div class="exam-catalog">
+            <div class="left-content">
+              <h3 class="exam-name">
+                平成25年度 春期 基本情報技術者試験 午前問題
+              </h3>
+              <p class="exam-description">
+                追加作業中です、もうしばらくお待ちください。
+              </p>
+            </div>
+            <div class="right-content">
+              <div class="exam-buttons">
+                <a class="button small disabled">この問題で勉強する</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="large-4 columns">
+      <div class="content-widget">
+        <div class="header">
+          <p>サイドバー</p>
+        </div>
+        <div class="main">
+          <p>広告エリア</p>
+        </div>
+      </di>
+    </div> -->
+  </div>
+</div>
+
+<div class="footer">
+  <div class="row" >
+    <div class="small-12 columns">
+      <div class="row">
+        <div class="medium-6 columns">
+          <h4>Policy</h4>
+          <p>本サービスを利用したことにによるいかなる損害についても責任を負いません.
+          掲載コンテンツの著作権について問題がありましたらご連絡ください.</p>
+          <p>このサイトは４人の仲間で運営しています.試験勉強される方のお役に立てればと考えていますが、ほとんど趣味のようなものです.
+            メンテナンス等で無連絡で停止することがあるかもしれません.
+            ただ、問題の追加も含め、できるだけご要望にお応えしたいと思っていますので何かありましたらご連絡ください.</p>
+        </div>
+
+        <div class="medium-6 columns">
+          <h4>Contuct Us</h4>
+          <form ng-submit="submit()">
+            <div class="row">
+              <div class="large-12 columns">
+                <label><p>お問い合わせカテゴリ
+                  <select ng-model="category">
+                    <option value="requests">新しい試験のリクエスト</option>
+                    <option value="illegal">権利侵害</option>
+                    <option value="guide">使い方</option>
+                    <option value="bugs">不具合・バグ</option>
+                    <option value="others">その他</option>
+                  </select>
+                </p></label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-12 columns">
+                <label><p>ご連絡用メールアドレス（任意）
+                  <input type="text" placeholder="testjoy@example.com"  ng-model="mail" class="input-mail"/>
+                </p></label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-12 columns">
+                <label><p>お問い合せ内容
+                  <textarea placeholder="お問い合せ内容" ng-model="inquiry"></textarea>
+                </p></label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-12 columns">
+                <a role="button" aria-label="submit form" href="#" class="button expand" ng-click="click()">送信</a>
+              </div>
+            </div>
+            <div class="row" ng-hide="formInformation">
+              <div class="large-12 columns">
+                <p>{{ message }}</p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="copyright">
+  <div class="row" >
+    <div class="large-12 columns text-center">
+      <p>Copyright &copy; 2015 Dempiee All Rights reserved.</p>
+    </div>
+  </div>
+</div>

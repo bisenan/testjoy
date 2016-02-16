@@ -1,0 +1,7 @@
+test/*
+tests/*
+assets/libs/*
+!.gitkeep
+npm-debug.log
+.tmp
+.sass-cache

@@ -1,0 +1,22 @@
+{
+  "name": "testjoy",
+  "version": "0.1",
+  "homepage": "https://github.com/senanjp/testjoy",
+  "authors": [
+    "kitano kazuma <kk90.north@gmail.com>"
+  ],
+  "main": "app/app.js",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "~0.14.7"
+  }
+}
