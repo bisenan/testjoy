@@ -1,5 +1,7 @@
+node_modules/*
 test/*
 tests/*
+app/bundle.js
 assets/libs/*
 !.gitkeep
 npm-debug.log
