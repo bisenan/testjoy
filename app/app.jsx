@@ -4,53 +4,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 
-
-var Main = React.createClass({
-  render() {
-    return (
-      <div>
-        <h1>headr area</h1>
-        {this.props.children}
-      </div>
-    );
-  }
-});
-
-var Home = React.createClass({
-  render() {
-    return (
-      <div>
-        <h1>home</h1>
-      </div>
-    );
-  }
-});
-
-var Exam = React.createClass({
-  render() {
-    const { examId } = this.props.params
-
-    return (
-      <div>
-        <h1>exam</h1>
-        <span>{examId}</span>
-      </div>
-    );
-  }
-});
-
-var Report = React.createClass({
-  render() {
-    const { reportId } = this.props.params
-
-    return (
-      <div>
-        <h1>report</h1>
-        <span>{reportId}</span>
-      </div>
-    );
-  }
-});
+import { App, Home, Exam, Report } from './components/index.jsx'
 
 var NotFound = React.createClass({
   render: function () {
@@ -64,8 +18,8 @@ var NotFound = React.createClass({
 
 var routes = (
   <Router history={browserHistory}>
-    <Route name="Main" path="/" component={Main}>
-      <IndexRoute name="Home" path="/" component={Home}/>
+    <Route name="App" path="/" component={App}>
+      <IndexRoute name="Home" component={Home}/>
       <Route name="Exam" path="/exams/:examId" component={Exam}/>
       <Route name="Report" path="/reports/:reportId" component={Report}/>
     </Route>
