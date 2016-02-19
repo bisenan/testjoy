@@ -1,27 +1,9 @@
 import React from 'react'
+import App from './App.jsx'
+import Home from './Home.jsx'
+import DevTools from './DevTools.jsx'
 
-var App = React.createClass({
-  render() {
-    return (
-      <div>
-        <h1>headr area</h1>
-        {this.props.children}
-      </div>
-    );
-  }
-});
-
-var Home = React.createClass({
-  render() {
-    return (
-      <div>
-        <h1>home</h1>
-      </div>
-    );
-  }
-});
-
-var Exam = React.createClass({
+let Exam = React.createClass({
   render() {
     const { examId } = this.props.params
 
@@ -34,7 +16,7 @@ var Exam = React.createClass({
   }
 });
 
-var Report = React.createClass({
+let Report = React.createClass({
   render() {
     const { reportId } = this.props.params
 
@@ -47,7 +29,14 @@ var Report = React.createClass({
   }
 });
 
-export { App, Home, Exam, Report }
+let NotFound = React.createClass({
+  render() {
+    return (
+      <div>
+        <span>NOT FOUND</span>
+      </div>
+    );
+  }
+});
 
-// export Home from './Home'
-// export Exam from './Exam'
+export { App, Home, Exam, Report, DevTools, NotFound }
