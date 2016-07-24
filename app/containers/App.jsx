@@ -4,10 +4,11 @@ import DevTools from './DevTools.jsx'
 
 export default class App extends Component {
   render() {
-    const { children } = this.props
+    const { children, errorMessage } = this.props
     return (
       <div>
         <nav>--- header ---</nav>
+        <span>{errorMessage}</span>
         {children}
         <nav>--- footer ---</nav>
         <DevTools />
@@ -17,5 +18,14 @@ export default class App extends Component {
 }
 
 App.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
+  errorMessage: PropTypes.string
 }
+
+function mapStateToProps(state, ownProps) {
+  return {
+    errorMessage: state.errorMessage
+  }
+}
+
+export default connect(mapStateToProps, {})(App)

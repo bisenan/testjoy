@@ -1,6 +1,5 @@
-import { combineReducers } from 'redux'
 
-function error(state = null, action) {
+function errorMessage(state = 'initial', action) {
   const { type, error } = action
 
   if (error) {
@@ -10,8 +9,4 @@ function error(state = null, action) {
   return state
 }
 
-const reducers = combineReducers({
-  error,
-})
-
-export default reducers
+export default { errorMessage }

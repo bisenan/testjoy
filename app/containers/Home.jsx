@@ -4,8 +4,6 @@ import { connect } from 'react-redux'
 
 export default class Home extends Component {
   render() {
-    const { children } = this.props
-
     return (
       <div>
         <div>
@@ -17,8 +15,4 @@ export default class Home extends Component {
       </div>
     )
   }
-}
-
-Home.propTypes = {
-  children: PropTypes.node
 }

@@ -7,10 +7,7 @@ import { syncHistory, routeReducer } from 'react-router-redux'
 import { App, Home, Exam, Report, DevTools, NotFound } from './containers/index.jsx'
 import reducers from './reducers/index.jsx'
 
-const reducer = combineReducers(Object.assign({}, reducers, {
-  routing: routeReducer
-}))
-
+const reducer = combineReducers(Object.assign(reducers, { routing: routeReducer }))
 const reduxRouterMiddleware = syncHistory(browserHistory)
 const createStoreWithMiddleware = applyMiddleware(reduxRouterMiddleware)(createStore)
 
